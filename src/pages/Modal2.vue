@@ -22,14 +22,14 @@ const open = ref(false)
         >
           <div class="text-lg font-bold">Payment successful</div>
 
-          <div class="mt-2">
+          <div class="pt-2">
             <p>
               Your payment has been successfully submitted. We’ve sent you an
               email with all of the details of your order.
             </p>
           </div>
 
-          <div class="mt-4">
+          <div class="pt-4">
             <button
               class="justify-center border border-black p-3"
               @click="open = false"
