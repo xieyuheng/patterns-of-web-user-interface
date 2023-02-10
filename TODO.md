@@ -2,7 +2,6 @@
 
 [page] `Dropdown` -- fix `onClickOutside`
 
-[page] `Modal` -- copy from `modal.html`
 [page] `Tabs` -- copy from `tabs.html`
 [page] `Accordion` -- copy from `accordion.html`
 [page] `Carousel` -- copy from `carousel.html`
