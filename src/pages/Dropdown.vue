@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue"
 import { onClickOutside } from "@vueuse/core"
 import { reactive, ref } from "vue"
 
@@ -44,7 +45,28 @@ function createState() {
 
 <template>
   <div class="flex justify-center pt-12">
-    <div class="relative">
+    <div class="flex flex-col">
+      <Menu>
+        <MenuButton>More</MenuButton>
+        <MenuItems class="flex flex-col">
+          <MenuItem v-slot="{ active }">
+            <a :class="{ 'bg-blue-500': active }" href="/account-settings">
+              Account settings
+            </a>
+          </MenuItem>
+          <MenuItem v-slot="{ active }">
+            <a :class="{ 'bg-blue-500': active }" href="/account-settings">
+              Documentation
+            </a>
+          </MenuItem>
+          <MenuItem disabled>
+            <span class="opacity-75">Invite a friend (coming soon!)</span>
+          </MenuItem>
+        </MenuItems>
+      </Menu>
+    </div>
+
+    <div class="hidden">
       <!-- Button -->
       <button
         ref="button"
