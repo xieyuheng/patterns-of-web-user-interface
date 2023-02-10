@@ -1,6 +1,7 @@
 # pages
 
-[page] `Dropdown` -- copy from `dropdown.html`
+[page] `Dropdown` -- migrate `x-ref` & `x-id`
+
 [page] `Modal` -- copy from `modal.html`
 [page] `Tabs` -- copy from `tabs.html`
 [page] `Accordion` -- copy from `accordion.html`
