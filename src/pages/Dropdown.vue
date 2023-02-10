@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { reactive } from "vue"
+import { reactive, ref } from "vue"
 
 const state = reactive(createState())
+
+const button = ref<HTMLButtonElement | null>(null)
+const panel = ref<HTMLDivElement | null>(null)
 
 function createState() {
   return {
@@ -12,19 +15,23 @@ function createState() {
         return this.close()
       }
 
-      // this.$refs.button.focus()
+      if (button.value) {
+        button.value.focus()
+      }
 
       this.open = true
     },
 
-    close(options: { focusBackTo?: HTMLButtonElement } = {}) {
+    close(options?: { focusBackTo: HTMLButtonElement | null }) {
       if (!this.open) {
         return
       }
 
       this.open = false
 
-      options.focusBackTo && options.focusBackTo.focus()
+      const focusBackTo = options?.focusBackTo
+
+      focusBackTo && focusBackTo.focus()
     },
   }
 }
@@ -32,15 +39,13 @@ function createState() {
 
 <template>
   <div class="flex justify-center pt-12">
-    <!-- @keydown.escape.prevent.stop="state.close({ focusBackTo: $refs.button })" -->
     <!-- @focusin.window="!$refs.panel.contains($event.target) && state.close()" -->
     <div x-id="['dropdown-panel']" class="relative">
       <!-- Button -->
-      <!-- :aria-controls="$id('dropdown-panel')" -->
       <button
-        x-ref="button"
+        ref="button"
+        @keydown.esc.prevent.stop="state.close({ focusBackTo: button })"
         @click="state.toggle()"
-        :aria-expanded="state.open"
         type="button"
         class="border-2 border-gray-900 px-4 py-2 focus:outline-none focus:ring focus:ring-cyan-400"
       >
@@ -49,9 +54,9 @@ function createState() {
 
       <!-- Panel -->
       <!-- :id="$id('dropdown-panel')" -->
-      <!-- @click.outside="state.close({ focusBackTo: $refs.button })" -->
+      <!-- @click.outside="state.close({ focusBackTo: button })" -->
       <div
-        x-ref="panel"
+        ref="panel"
         v-show="state.open"
         x-transition.origin.top.left
         style="display: none"
