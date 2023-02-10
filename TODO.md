@@ -1,5 +1,3 @@
-setup tailwind
-
 # component
 
 [component] `Carousel`

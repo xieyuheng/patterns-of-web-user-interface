@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>TODO</div>
+  <div class="text-red-400">TODO</div>
 </template>
