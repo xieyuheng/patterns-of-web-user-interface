@@ -1,4 +1,4 @@
-setup vue project
+setup tailwind
 
 # component
 
