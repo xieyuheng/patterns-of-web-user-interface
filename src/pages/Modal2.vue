@@ -31,7 +31,7 @@ const open = ref(false)
 
           <div class="mt-4">
             <button
-              class="justify-center border border-black p-3 text-sm"
+              class="justify-center border border-black p-3"
               @click="open = false"
             >
               Got it, thanks!
