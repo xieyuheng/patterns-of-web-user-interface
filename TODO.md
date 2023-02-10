@@ -1,5 +1,4 @@
-`Tabs` -- copy from `tabs.html`
-
+`Tabs`
 `RadioGroup`
 `Toggle`
 `Tooltip`

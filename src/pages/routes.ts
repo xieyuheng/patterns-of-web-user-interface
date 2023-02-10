@@ -1,12 +1,12 @@
 import { RouteRecordRaw } from "vue-router"
-import Dropdown from "./Dropdown.vue"
+import Menu from "./Menu.vue"
 import PageNotFound from "./errors/PageNotFound.vue"
 import Home from "./Home.vue"
-import Modal from "./Modal.vue"
+import Dialog from "./Dialog.vue"
 
 export const routes: Array<RouteRecordRaw> = [
   { path: "/", component: Home },
-  { path: "/dropdown", component: Dropdown },
-  { path: "/modal", component: Modal },
+  { path: "/Menu", component: Menu },
+  { path: "/dialog", component: Dialog },
   { path: "/:pathMatch(.*)", component: PageNotFound },
 ]
