@@ -1,10 +1,5 @@
 # pages
 
-[page] `Dropdown` -- migrate `x-id`
-
-[page] `Dropdown` -- migrate `@focusin.window`
-[page] `Dropdown` -- migrate `x-transition.origin.top.left`
-
 [page] `Modal` -- copy from `modal.html`
 [page] `Tabs` -- copy from `tabs.html`
 [page] `Accordion` -- copy from `accordion.html`

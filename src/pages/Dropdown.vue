@@ -44,8 +44,7 @@ function createState() {
 
 <template>
   <div class="flex justify-center pt-12">
-    <!-- @focusin.window="!$refs.panel.contains($event.target) && state.close()" -->
-    <div x-id="['dropdown-panel']" class="relative">
+    <div class="relative">
       <!-- Button -->
       <button
         ref="button"
@@ -58,14 +57,10 @@ function createState() {
       </button>
 
       <!-- Panel -->
-      <!-- :id="$id('dropdown-panel')" -->
-
       <div
         v-show="state.open"
         ref="panel"
         class="absolute left-0 mt-2 w-40 border-2 border-gray-900 bg-white"
-        style="display: none"
-        x-transition.origin.top.left
       >
         <div>
           <a
