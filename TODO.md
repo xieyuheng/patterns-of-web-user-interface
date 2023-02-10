@@ -1,5 +1,3 @@
-[page] `Home` link to `dropdown/` and `modal/`
-
 # pages
 
 [page] `Dropdown` -- copy from `dropdown.html`
