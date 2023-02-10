@@ -1,61 +1,44 @@
-<script setup lang="ts">
+<script setup>
+import { Dialog, DialogPanel } from "@headlessui/vue"
 import { ref } from "vue"
 
 const open = ref(false)
 </script>
 
 <template>
-  <div class="flex justify-center pt-12">
-    <!-- Trigger -->
-    <button
-      @click="open = true"
-      type="button"
-      class="border-2 border-gray-900 bg-white px-4 py-2 focus:outline-none focus:ring focus:ring-cyan-400"
-    >
+  <div class="flex h-screen w-full items-center justify-center">
+    <button type="button" @click="open = true" class="border border-black p-3">
       Open dialog
     </button>
+  </div>
 
-    <!-- Modal -->
-    <div
-      v-show="open"
-      role="dialog"
-      aria-modal="true"
-      class="fixed inset-0 z-10 overflow-y-auto"
-    >
-      <!-- Overlay -->
-      <div v-show="open" class="fixed inset-0 bg-black bg-opacity-50"></div>
+  <Dialog as="div" :open="open" @close="open = false" class="relative z-10">
+    <div class="fixed inset-0 bg-black bg-opacity-10" />
 
-      <!-- Panel -->
-      <div
-        v-show="open"
-        @click="open = false"
-        class="relative flex min-h-screen items-center justify-center p-4"
-      >
-        <div
-          @click.stop
-          class="relative w-full max-w-2xl overflow-y-auto border-2 border-gray-900 bg-white p-12 shadow-lg"
+    <div class="fixed inset-0">
+      <div class="flex min-h-full items-center justify-center">
+        <DialogPanel
+          class="max-w-md border border-black bg-white p-6 text-left"
         >
-          <!-- Title -->
-          <h2 class="text-3xl font-bold">Launch nuclear ballistic missile</h2>
-          <!-- Content -->
-          <p class="mt-2 text-gray-600">Are you sure you want to do this?</p>
-          <!-- Controls -->
-          <div class="mt-8 flex space-x-2">
+          <div class="text-lg font-bold">Payment successful</div>
+
+          <div class="mt-2">
+            <p>
+              Your payment has been successfully submitted. We’ve sent you an
+              email with all of the details of your order.
+            </p>
+          </div>
+
+          <div class="mt-4">
             <button
-              type="button"
-              class="border-2 border-gray-900 bg-white px-4 py-2 focus:outline-none focus:ring focus:ring-cyan-400"
+              class="justify-center border border-black p-3 text-sm"
+              @click="open = false"
             >
-              Confirm
-            </button>
-            <button
-              type="button"
-              class="border-2 border-gray-900 bg-white px-4 py-2 focus:outline-none focus:ring focus:ring-cyan-400"
-            >
-              Cancel
+              Got it, thanks!
             </button>
           </div>
-        </div>
+        </DialogPanel>
       </div>
     </div>
-  </div>
+  </Dialog>
 </template>
