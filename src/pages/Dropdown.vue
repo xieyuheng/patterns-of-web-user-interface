@@ -52,7 +52,7 @@ function createState() {
       <!-- @click.outside="state.close({ focusBackTo: $refs.button })" -->
       <div
         x-ref="panel"
-        x-show="state.open"
+        v-show="state.open"
         x-transition.origin.top.left
         style="display: none"
         class="absolute left-0 mt-2 w-40 border-2 border-gray-900 bg-white"
