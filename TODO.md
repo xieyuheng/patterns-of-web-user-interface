@@ -2,6 +2,11 @@
 
 [page] `Dropdown` -- migrate `x-ref` & `x-id`
 
+[page] `Dropdown` -- migrate `@keydown.escape.prevent.stop`
+[page] `Dropdown` -- migrate `@focusin.window`
+[page] `Dropdown` -- migrate `@click.outside`
+[page] `Dropdown` -- migrate `x-transition.origin.top.left`
+
 [page] `Modal` -- copy from `modal.html`
 [page] `Tabs` -- copy from `tabs.html`
 [page] `Accordion` -- copy from `accordion.html`

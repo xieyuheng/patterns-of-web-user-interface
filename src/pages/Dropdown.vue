@@ -89,7 +89,7 @@ function createState() {
         </div>
       </div>
 
-      <div class="mt-6">
+      <div class="mt-6 flex space-x-2">
         <button
           type="button"
           class="border-2 border-gray-900 px-4 py-2 focus:outline-none focus:ring focus:ring-cyan-400"
