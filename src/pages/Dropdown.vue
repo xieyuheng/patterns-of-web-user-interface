@@ -1,10 +1,15 @@
 <script setup lang="ts">
+import { onClickOutside } from "@vueuse/core"
 import { reactive, ref } from "vue"
 
 const state = reactive(createState())
 
 const button = ref<HTMLButtonElement | null>(null)
 const panel = ref<HTMLDivElement | null>(null)
+
+onClickOutside(panel, (event) => {
+  state.close({ focusBackTo: button.value })
+})
 
 function createState() {
   return {
@@ -54,13 +59,13 @@ function createState() {
 
       <!-- Panel -->
       <!-- :id="$id('dropdown-panel')" -->
-      <!-- @click.outside="state.close({ focusBackTo: button })" -->
+
       <div
-        ref="panel"
         v-show="state.open"
-        x-transition.origin.top.left
-        style="display: none"
+        ref="panel"
         class="absolute left-0 mt-2 w-40 border-2 border-gray-900 bg-white"
+        style="display: none"
+        x-transition.origin.top.left
       >
         <div>
           <a

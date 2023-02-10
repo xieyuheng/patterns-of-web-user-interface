@@ -10,9 +10,12 @@
     "format": "prettier src --write"
   },
   "dependencies": {
+    "@vueuse/components": "^9.12.0",
+    "@vueuse/core": "^9.12.0",
+    "@vueuse/head": "^1.0.25",
     "vue": "^3.2.47",
-    "vue-router": "^4.1.6",
-    "vue-meta": "^2.4.0"
+    "vue-meta": "^2.4.0",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
