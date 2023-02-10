@@ -1,6 +1,6 @@
 # pages
 
-[page] `Dropdown` -- migrate `x-ref` & `x-id`
+[page] `Dropdown` -- migrate `x-id`
 
 [page] `Dropdown` -- migrate `@focusin.window`
 [page] `Dropdown` -- migrate `@click.outside`
